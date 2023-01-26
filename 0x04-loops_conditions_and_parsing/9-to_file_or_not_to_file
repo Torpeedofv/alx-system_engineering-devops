@@ -16,7 +16,5 @@ else
 	if [ -f $name ]
 		then
 			echo "school is a regular file"
-	else
-		echo "school is not a regular file"
 	fi
 fi
