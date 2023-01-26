@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # A bash script that displays the content of a file
 
-while read name; do
+while read -r name; do
 	echo "$name" | cut -d";" -f1,3,6
 done < /etc/passwd
