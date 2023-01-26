@@ -1,7 +1,7 @@
 #!/usr/bin/env bash 
 #A script that displays the content of the CWD in a list format
 
-for file in $(ls); do
+for file in *; do
 	name=${file#*-}
-	echo $name 
+	echo "$name" 
 done
