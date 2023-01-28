@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# This script creates a file
+
+touch /var/run/myscript.pid 
+chmod u+x /var/run/myscript.pid
+bash -c "echo $$ > file"
