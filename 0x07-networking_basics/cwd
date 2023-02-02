@@ -12,16 +12,16 @@ for file in "$@"; do
 	if [ -e "$file" ]
 	then
 		echo "Adding content to existing "$file""
-		echo "#!/usr/bin/env bash" >> "$file"
-		echo "# This script " >> "$file"
+		echo "#!/usr/bin/env bash" > "$file"
+		echo "#This script " >> "$file"
 	else
 		echo "Creating New Files"
 		touch "$@"
 		chmod u+x "$@"
 		echo "Files created successfully with mode u+x"
 		echo "Adding content to new "$file""
-		echo "#!/usr/bin/env bash" >> "$file"
-		echo "# This script " >> "$file"
+		echo "#!/usr/bin/env bash" > "$file"
+		echo "#This script " >> "$file"
 	fi
 done
 

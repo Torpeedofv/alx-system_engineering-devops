@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Store the result of the netstat command in a variable
+result=$(sudo netstat -lp)
+
+# Filter the result to only show listening ports
+echo "$result" | grep "LISTEN"
+
