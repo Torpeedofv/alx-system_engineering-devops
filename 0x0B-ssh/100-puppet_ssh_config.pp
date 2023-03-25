@@ -1,14 +1,11 @@
 # ceates a file in temp
 
-file { 'config':
-  ensure  => 'present',
-  content => 'Host *
-	PasswordAuthentication no
+file_line { 'Turn off passwd auth':
+  path  => '/etc/ssh/ssh_config',
+  line  => 'PasswordAuthentication no',
+}
 
-Host myserver
-	User ubuntu
-        PasswordAuthentication no
-	IdentityFile ~/.ssh/school
-	Hostname 34.227.101.5',
-  path    => '/home/torpeedo/.ssh/config',
+file_line { 'Declare identity file':
+  path  => '/etc/ssh/ssh_config',
+  line  => 'IdentityFile ~/.ssh/school',
 }
