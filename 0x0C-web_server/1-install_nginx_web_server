@@ -3,5 +3,5 @@
 apt-get update -y
 apt-get install nginx -y
 echo "Hello World!" > /var/www/html/index.html
-sed -i 's/\blisten\b\s*\b[0-9]\+/\blisten\b 80/' /etc/nginx/sites-available/default
+sed -i 's/listen 80 default_server/listen 80/g' /etc/nginx/sites-available/default
 service nginx restart
