@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 #configures the server to redirect to another page
 
+apt-get update -y 
+apt-get install -y nginx
+echo "Hello World!" > /var/www/html/index.html
+
 printf %s "server {
     listen		80 default_server;
     listen		[::]:80 default_server;
