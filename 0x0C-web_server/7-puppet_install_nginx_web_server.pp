@@ -1,9 +1,7 @@
 # installs and configures an Nginx server
 
-class { 'nginx':
+package { 'nginx':
   package_ensure => 'installed',
-  service_enable => true,
-  service_ensure => 'running',
 }
 
 file { '/var/www/html/index.html':
@@ -26,4 +24,8 @@ nginx::resource::server { 'default':
   server_name         => '_',
   root                => '/var/www/html',
   index_files         => ['index.html', 'index.htm', 'index.nginx-debian.html'],
+}
+exec { 'start':
+  command  => 'sudo service nginx restart',
+  provider => 'shell',
 }
