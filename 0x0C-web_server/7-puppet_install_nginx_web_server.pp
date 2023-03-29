@@ -1,7 +1,7 @@
 # installs and configures an Nginx server
 
 package { 'nginx':
-  package_ensure => 'installed',
+  ensure => 'installed',
 }
 
 file { 'index.nginx-debian.html':
@@ -10,7 +10,8 @@ file { 'index.nginx-debian.html':
 }
 
 exec { 'config':
-  command  => 'sed -i "s/server_name _;/server_name _;\n\trewrite ^\/redirect_me https:\/\/www.youtube.com/watch?v=TfgBHC5gvTI permanent;/" /etc/nginx/sites-available/default',
+  command  => 'sed -i "s/server_name _;/server_name _;\n\trewrite ^\/redirect_me
+https:\/\/www.youtube.com/watch?v=TfgBHC5gvTI permanent;/" /etc/nginx/sites-available/default',
   provider => 'shell',
 }
 exec { 'start':
