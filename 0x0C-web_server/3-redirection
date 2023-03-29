@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+#configures the server to redirect to another page
+
+printf %s "server {
+    listen		80 default_server;
+    listen		[::]:80 default_server;
+    root		/var/www/html;
+    index		index.html index.htm index.nginx-debian.html;
+    location /redirect_me {
+           return 301 https://www.youtube.com/watch?v=TfgBHC5gvTI;
+			        }
+		}
+" > /etc/nginx/sites-available/default
+service nginx restart
