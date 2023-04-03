@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+#install and configure HAproxy on my server and distribute requests
+
+apt-get update
+apt-get install -y haproxy
+
+printf %s "
+frontend http-in
+	bind *:80
+	mode http
+	default_backend student_server
+
+backend student_server
+	balance roundrobin
+	server 131111-web-01 34.227.101.5:80 check
+	server 131111-web-02 52.91.116.255:80 check
+" >> /etc/haproxy/haproxy.cfg
+
+echo "ENABLED=1" >> /etc/default/haproxy
+
+service haproxy start 
