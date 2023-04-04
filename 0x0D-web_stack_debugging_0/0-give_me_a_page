@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+#fixing the the an issue with an apache server using commands
  1  ls
     2  systemctl status apache2
     3  seervice apache2 status
