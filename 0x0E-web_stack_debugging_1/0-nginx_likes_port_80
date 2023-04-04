@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+#script that configures an nginx server to listen on port 80 of all 
+#active ipv4 ips
+service nginx start
+ufw allow 'Nginx HTTP'
+service nginx restart
