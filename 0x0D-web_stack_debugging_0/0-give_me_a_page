@@ -1,28 +1,4 @@
 #!/usr/bin/env bash
 #fixing the the an issue with an apache server using commands
- 1  ls
-    2  systemctl status apache2
-    3  seervice apache2 status
-    4  service apache2 status
-    5  w
-    6  history
-    7  netstat -lp
-    8  sudo apt install apache2
-    9  sudo ufw app list
-   10  sudo apt-get install ufw
-   11  sudo which ufw
-   12  sudo ufw app list
-   13  sudo ufw allow 'Apache'
-   14  sudo ufw status
-   15  sudo service ufw status
-   16  dpkg -l ufw
-   17  sudo systemctl ufw status
-   18  sudo apt-get install systemd
-   19  --fix-missing
-   20  sudo apt-get install systemd --fix-missing
-   21  sudo service status apache2
-   22  sudo service apache2 status
-   23  sudo service apache2 start
-   24  sudo service apache2 status
-   25  hostname -I
-   26  curl 0:8080
+sudo service apache2 start
+
