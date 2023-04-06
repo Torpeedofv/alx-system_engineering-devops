@@ -3,4 +3,7 @@
 #active ipv4 ips
 service nginx start
 ufw allow 'Nginx HTTP'
+port_80="80 default_server"
+port_8080="8080 default_server"
+sed -i "s/$port_8080/$port_80/" /etc/nginx/sites-enabled/default
 service nginx restart
