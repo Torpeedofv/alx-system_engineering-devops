@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #script that configures an nginx server to listen on port 80 of all 
 #active ipv4 ips
-port_80="80 default_server"
-port_8080="8080 default_server"
-sed -i "s/$port_8080/$port_80/" /etc/nginx/sites-enabled/default
+nport="80 default_server"
+oldport="8080 default_server"
+sed -i "s/$oldport/$nport/" /etc/nginx/sites-enabled/default
 service nginx restart
