@@ -11,8 +11,8 @@ if __name__ == "__main__":
         .get('https://jsonplaceholder.typicode.com/users/{}/todos'.format(arg))
     employee = response_name.json()
     employee_todo = get_todo.json()
-    employee_id = employee['id']
-    employee_name = employee['name']
+    employee_id = employee.get('id')
+    employee_name = employee.get('name')
     task = 0
     for i in range(len(employee_todo)):
         if employee_todo[i]['completed']:
