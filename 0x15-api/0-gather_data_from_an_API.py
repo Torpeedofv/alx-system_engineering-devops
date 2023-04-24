@@ -5,10 +5,10 @@ import sys
 
 if __name__ == "__main__":
     arg = sys.argv[1]
-    response_name = requests
-    .get('https://jsonplaceholder.typicode.com/users/{}'.format(arg))
-    get_todo = requests
-    .get('https://jsonplaceholder.typicode.com/users/{}/todos'.format(arg))
+    response_name = requests\
+        .get('https://jsonplaceholder.typicode.com/users/{}'.format(arg))
+    get_todo = requests\
+        .get('https://jsonplaceholder.typicode.com/users/{}/todos'.format(arg))
     employee = response_name.json()
     employee_todo = get_todo.json()
     employee_id = employee['id']
