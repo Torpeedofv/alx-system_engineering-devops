@@ -18,8 +18,8 @@ if __name__ == "__main__":
     for i in range(length):
         if employee_todo[i].get('completed'):
             task += 1
-    print(f"Employee {employee_name} is done with\
-          tasks({task}/{length}):")
+    print("Employee {} is done with tasks({}/{}):"
+          .format(employee_name, task, length))
     for i in range(length):
         if employee_todo[i].get('completed'):
-            print(f"\t {employee_todo[i].get('title')}")
+            print("\t {}".format(employee_todo[i].get('title')))
