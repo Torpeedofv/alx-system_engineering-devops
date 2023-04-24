@@ -30,5 +30,5 @@ if __name__ == "__main__":
                 todo.append({"username": employee_name,
                             "task": task_title,
                              "completed": task_status})
-            json_data = {'{}'.format(employee_id): todo}
-            json.dump(json_data, file)
+            json_data[employee_id] = todo
+        json.dump(json_data, file)
