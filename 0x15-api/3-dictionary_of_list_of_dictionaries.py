@@ -13,7 +13,7 @@ if __name__ == "__main__":
     employee_todo = get_todo.json()
     filename = 'todo_all_employees.json'
 
-    json_data = []
+    json_data = {}
     with open(filename, 'w') as file:
         for employ in employee:
             employee_id = employ['id']
@@ -27,8 +27,8 @@ if __name__ == "__main__":
             for status in employee_todo:
                 task_status = status.get('completed')
                 task_title = status.get('title')
-                todo.append({"task": task_title,
-                            "completed": task_status,
-                             "username": employee_name})
-        json_data = {'{}'.format(employee_id): todo}
-        json.dump(json_data, file)
+                todo.append({"username": employee_name,
+                            "task": task_title,
+                             "completed": task_status})
+            json_data = {'{}'.format(employee_id): todo}
+            json.dump(json_data, file)
