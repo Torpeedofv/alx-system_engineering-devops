@@ -14,11 +14,12 @@ if __name__ == "__main__":
     employee_id = employee.get('id')
     employee_name = employee.get('name')
     task = 0
-    for i in range(len(employee_todo)):
-        if employee_todo[i]['completed']:
+    length = len(employee_todo)
+    for i in range(length):
+        if employee_todo[i].get('completed'):
             task += 1
     print(f"Employee {employee_name} is done with\
-          tasks({task}/{len(employee_todo)}):")
-    for i in range(len(employee_todo)):
-        if employee_todo[i]['completed']:
-            print(f"\t {employee_todo[i]['title']}")
+          tasks({task}/{length}):")
+    for i in range(length):
+        if employee_todo[i].get('completed'):
+            print(f"\t {employee_todo[i].get('title')}")
