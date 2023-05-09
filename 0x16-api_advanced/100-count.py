@@ -20,12 +20,11 @@ def count_words(subreddit, word_list, after='', counts=None):
         title = title.get('data').get('title').lower()
         for word in word_list:
             if word.lower() in title:
-                counts[word.lower()]+= 1
+                counts[word.lower()] += 1
     if data.get('after'):
-        count_words(subreddit, word_list, after=data.get('after'), counts=counts)
-            
+        count_words(subreddit, word_list, after=data.get('after'),
+                    counts=counts)
     sorted_counts = sorted(counts.items(), key=lambda x: x[1], reverse=True)
     counts_str = ' '.join([f'{word}:{count}' for word, count in sorted_counts])
     print(counts_str)
     return counts
-
