@@ -1,0 +1,27 @@
+server {
+    listen              80 default_server;
+    listen              [::]:80 default_server;
+    root                /var/www/html;
+    index               index.html index.htm index.nginx-debian.html;
+    location / {
+        add_header X-Served-By 131111-web-01;
+}
+    location /redirect_me {
+           return 301 https://www.youtube.com/watch?v=TfgBHC5gvTI;
+                                }
+    location /hbnb_static/ {
+        alias /data/web_static/current/;
+    }
+
+    server_name 34.227.101.5;
+    location /airbnb-onepage/{
+        proxy_pass http://0.0.0.0:5000;
+}
+
+
+error_page 404 /404.html;
+    location /404 {
+        root /var/www/html/;
+        internal;
+    }
+        }
